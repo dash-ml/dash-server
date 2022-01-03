@@ -8,7 +8,7 @@ author=$(Ge Yang)
 author_email=$(yangge1987@gmail.com)
 
 # notes on python packaging: http://python-packaging.readthedocs.io/en/latest/minimal.html
-default: ;
+default: publish release
 build:
 	rm -rf dist
 	python setup.py sdist
