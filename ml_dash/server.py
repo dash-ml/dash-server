@@ -1,8 +1,8 @@
-from ml_dash.schema import schema
-from sanic_graphql import GraphQLView
-
 from sanic import Sanic, views
 from sanic_cors import CORS
+from sanic_graphql import GraphQLView
+
+from ml_dash.schema import schema
 
 # to support HTTPS.
 views.HTTP_METHODS += ('FETCH', 'OPTIONS')
@@ -54,7 +54,7 @@ def run(logdir=None, **kwargs):
     print(vars(config.SSLArgs))
 
     config.ServerArgs.update(**kwargs)
-    if config.SSLArgs:
+    if config.SSLArgs.cert:
         app.run(**vars(config.ServerArgs), ssl=vars(config.SSLArgs))
     else:
         app.run(**vars(config.ServerArgs))

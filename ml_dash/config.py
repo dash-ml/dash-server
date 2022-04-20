@@ -28,6 +28,7 @@ class ServerArgs:
     workers = Proto(1, help="the number of worker processes")
     debug = False
 
+
 @cli_parse
 class SSLArgs:
     cert = Proto(None, dtype=str, help="the path to the SSL certificate")
