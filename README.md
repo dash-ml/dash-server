@@ -20,7 +20,17 @@ of experiments quickly, and dive in-depth into individual experiments with minim
 To make sure you **install** the newest version of `ml_dash`:
 
 ```bash
+conda install pycurl
 pip install ml-logger ml-dash --upgrade --no-cache
+```
+
+Just doing this would not work. The landscape of python modules is a lot messier than that of javascript. The most up-to-date graphene requires the following versioned dependencies:
+
+```bash
+yes | pip install graphene==2.1.3
+yes | pip install graphql-core==2.1
+yes | pip install graphql-relay==0.4.5
+yes | pip install graphql-server-core==1.1.1
 ```
 
 There are two servers: 
