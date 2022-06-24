@@ -34,6 +34,9 @@ publish: convert-rst
 	make test
 	make build
 	twine upload dist/*
+publish-no-test: convert-rst
+	make build
+	twine upload dist/*
 start: # dev start: use sanic to bootstrap.
 	source activate playground && python -m ml_dash.main --host=0.0.0.0 --port=8081 --workers=4 --logdir="tests/runs"
 test:
