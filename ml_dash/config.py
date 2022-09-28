@@ -1,10 +1,9 @@
 import os
 
-from params_proto import cli_parse, Proto
+from params_proto import ParamsProto, Proto, Flag
 
 
-@cli_parse
-class Args:
+class Args(ParamsProto):
     """
     ML-Dash
     -------
@@ -21,15 +20,13 @@ class Args:
     logdir = Proto(os.path.realpath("."), help="the root directory for all of the logs")
 
 
-@cli_parse
-class ServerArgs:
+class ServerArgs(ParamsProto):
     host = Proto("", help="use 0.0.0.0 if you want external clients to be able to access this.")
     port = Proto(8081, help="the port")
     workers = Proto(1, help="the number of worker processes")
-    debug = False
+    debug = Flag("use to turn on debug mode")
 
 
-@cli_parse
-class SSLArgs:
+class SSLArgs(ParamsProto):
     cert = Proto(None, dtype=str, help="the path to the SSL certificate")
     key = Proto(None, dtype=str, help="the path to the SSL key")

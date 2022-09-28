@@ -2,7 +2,7 @@ import os
 from sanic import Sanic
 from sanic.exceptions import FileNotFound
 from sanic.response import file
-from params_proto import cli_parse, Proto
+from params_proto.v1 import ParamsProto, Proto
 
 # gets current directory
 BASE = os.path.realpath(__file__)
@@ -20,8 +20,7 @@ async def index(request, exception=None):
     return await file(build_path + '/index.html')
 
 
-@cli_parse
-class AppServerArgs:
+class AppServerArgs(ParamsProto):
     """
     Configuration Arguments for the Sanic App that serves
     the static web-application.
