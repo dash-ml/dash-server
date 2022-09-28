@@ -300,7 +300,7 @@ def test_series_x_limit(log_dir):
         metricsFiles: $metricsFiles, 
         prefix: $prefix, 
         k: 10, 
-        xLow: 100,
+        xLow: 41,
         xKey: $xKey, 
         yKey: $yKey, 
         yKeys: $yKeys

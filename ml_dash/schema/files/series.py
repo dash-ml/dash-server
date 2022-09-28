@@ -155,8 +155,6 @@ def get_series(metrics_files=tuple(),
     dataframes = []
     for df in dfs:
         if df is None:
-            df['index'] = df.index
-            df.set_index('index')
             continue
         elif x_key is not None:
             df.set_index(x_key)
@@ -181,10 +179,10 @@ def get_series(metrics_files=tuple(),
         inds = True
         if x_low is not None:
             inds &= df[x_key or "index"] >= x_low
-            print("x_low >>>", inds)
+            # print("x_low >>>", inds)
         if x_high is not None:
             inds &= df[x_key or "index"] <= x_high
-            print("x_high >>>", inds)
+            # print("x_high >>>", inds)
         if inds is not True:
             df = df.loc[inds]
 
