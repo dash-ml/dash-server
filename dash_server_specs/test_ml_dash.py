@@ -348,7 +348,7 @@ def test_series_last(log_dir):
     }
     """
     variables = {"yKey": "slow_sine",
-                 "last": 100,
+                 "last": 10,
                  "metricsFiles": ["/episodeyang/cpc-belief/mdp/experiment_01/metrics.pkl"]}
 
     from ml_dash.config import Args
@@ -361,7 +361,7 @@ def test_series_last(log_dir):
         print(">>")
         show(r['data'])
         assert not not r['data']['series']['yMean'], "the yMean should NOT be empty"
-        assert not not r['data']['series']['yCount'] == [100.0]
+        assert not not r['data']['series']['yCount'] == [10.0]
 
 
 # can we do the average first?
@@ -377,9 +377,7 @@ def test_series_group(log_dir):
                 xLow: 25
                 prefix:"/episodeyang/cpc-belief/mdp"
                 metricsFiles:["experiment_00/metrics.pkl", "experiment_01/metrics.pkl", "experiment_02/metrics.pkl"]
-                # xKey: "__timestamp"
                 xKey: "epoch"
-                # yKey: "sine"
                 yKeys: ["sine", "slow_sine"]
                 # xAlign: "start"
             ) { 
@@ -417,7 +415,7 @@ def test_metric(log_dir):
                 id
                 keys
                 path
-                value (keys: ["__timestamp", "sine"])
+                value (keys: ["sine"])
             }
         }
     """
@@ -450,7 +448,7 @@ def test_schema(log_dir):
                             metrics {
                                 id
                                 keys 
-                                value (keys: ["__timestamp", "sine"]) 
+                                value (keys: ["sine"]) 
                             }
                         } } }
                         directories(first:10){

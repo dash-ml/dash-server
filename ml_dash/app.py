@@ -2,7 +2,7 @@ import os
 from sanic import Sanic
 from sanic.exceptions import FileNotFound
 from sanic.response import file
-from params_proto.v1 import ParamsProto, Proto
+from params_proto import ParamsProto, Proto
 
 # gets current directory
 BASE = os.path.realpath(__file__)
