@@ -53,7 +53,7 @@ def run(logdir=None, **kwargs):
     cprint("SSL Args:", 'yellow')
     print(vars(config.SSLArgs))
 
-    config.ServerArgs.update(**kwargs)
+    config.ServerArgs._update(**kwargs)
     if config.SSLArgs.cert:
         app.run(**vars(config.ServerArgs), ssl=vars(config.SSLArgs))
     else:
