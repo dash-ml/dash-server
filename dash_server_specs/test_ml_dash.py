@@ -7,7 +7,7 @@ from dash_server_specs import show, shows
 
 @pytest.fixture(scope='session')
 def log_dir(request):
-    return request.config.getoption('--log-dir')
+    return request.config.getoption('--logdir')
 
 
 def test_delete_text_file(log_dir):
