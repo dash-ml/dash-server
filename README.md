@@ -29,6 +29,7 @@ Just doing this would not work. The landscape of python modules is a lot messier
 ```zsh
 pip install sanic==20.9.0
 pip install sanic-cors==0.10.0.post3
+pip install sanic-graphql==1.1.0
 yes | pip install graphene==2.1.3
 yes | pip install graphql-core==2.1
 yes | pip install graphql-relay==0.4.5
