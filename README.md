@@ -27,8 +27,8 @@ pip install ml-logger ml-dash --upgrade --no-cache
 Just doing this would not work. The landscape of python modules is a lot messier than that of javascript. The most up-to-date graphene requires the following versioned dependencies:
 
 ```zsh
-pip install sonic==20.9.0
-pip install sonic-cors==0.10.0.post3
+pip install sanic==20.9.0
+pip install sanic-cors==0.10.0.post3
 yes | pip install graphene==2.1.3
 yes | pip install graphql-core==2.1
 yes | pip install graphql-relay==0.4.5
