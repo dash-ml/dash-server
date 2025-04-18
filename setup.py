@@ -35,7 +35,7 @@ setup(name="ml-dash",
       packages=[p for p in find_packages() if p != "tests"],
       include_package_data=True,
       install_requires=[
-          "cloudpickle==1.3.0",
+          "cloudpickle==3.1.1",
           'dill',
           "graphene==2.1.3",
           "graphql-core==2.1",
